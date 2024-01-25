@@ -15,8 +15,8 @@ export default function MarketerForm({ setIsSubmitted }) {
     experience: z.number().optional(),
     budget: z
       .number()
-      .min(1000, { message: 'Minimum budget should be at least 1000' })
-      .max(50000, { message: 'Maximum budget should be at most 50,000' })
+      .min(1_000, { message: 'Minimum budget should be at least 1000' })
+      .max(500_000, { message: 'Maximum budget should be at most 500,000' })
       .optional(),
   })
 
@@ -25,7 +25,9 @@ export default function MarketerForm({ setIsSubmitted }) {
 
   function handleInputChange(event) {
     let { name, value, type } = event.target
-    if (type === 'number' || type === 'radio') value = +value
+    if (type === 'number' || type === 'radio') {
+      value = +value
+    }
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
