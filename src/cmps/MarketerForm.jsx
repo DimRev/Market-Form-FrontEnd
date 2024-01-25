@@ -78,6 +78,7 @@ export default function MarketerForm({ setIsSubmitted }) {
           type="text"
           name="firstname"
           id="firstname"
+          placeholder="optional"
           value={formData.firstname}
           onChange={handleInputChange}
         />
@@ -90,18 +91,20 @@ export default function MarketerForm({ setIsSubmitted }) {
           type="text"
           name="lastname"
           id="lastname"
+          placeholder="optional"
           value={formData.lastname}
           onChange={handleInputChange}
         />
         {errors.lastname && <div className="error">{errors.lastname}</div>}
       </div>
 
-      <label htmlFor="email">Email Address</label>
+      <label htmlFor="email">Email Address*</label>
       <div className="input-wrapper">
         <input
           type="text"
           name="email"
           id="email"
+          placeholder="required"
           value={formData.email}
           onChange={handleInputChange}
         />
@@ -114,6 +117,7 @@ export default function MarketerForm({ setIsSubmitted }) {
           type="text"
           name="website"
           id="website"
+          placeholder="optional"
           value={formData.website}
           onChange={handleInputChange}
         />
@@ -126,6 +130,7 @@ export default function MarketerForm({ setIsSubmitted }) {
           type="text"
           name="linkedin"
           id="linkedin"
+          placeholder="optional"
           value={formData.linkedin}
           onChange={handleInputChange}
         />
@@ -150,7 +155,7 @@ export default function MarketerForm({ setIsSubmitted }) {
             <input
               type="radio"
               name="experience"
-              value={0}
+              value={1}
               onChange={handleInputChange}
             />
             0-1 years
@@ -159,7 +164,7 @@ export default function MarketerForm({ setIsSubmitted }) {
             <input
               type="radio"
               name="experience"
-              value={0}
+              value={2}
               onChange={handleInputChange}
             />
             1-2 years
@@ -168,7 +173,7 @@ export default function MarketerForm({ setIsSubmitted }) {
             <input
               type="radio"
               name="experience"
-              value={0}
+              value={3}
               onChange={handleInputChange}
             />
             2 and more years
@@ -185,6 +190,7 @@ export default function MarketerForm({ setIsSubmitted }) {
           type="number"
           name="budget"
           id="budget"
+          placeholder="optional"
           value={formData.budget}
           onChange={handleInputChange}
         />
