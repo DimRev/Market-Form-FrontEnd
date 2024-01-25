@@ -1,7 +1,8 @@
 import { z } from 'zod'
 import { useState } from 'react'
+import { formService } from '../services/api/form.service'
 
-export default function MarketerForm() {
+export default function MarketerForm({ setIsSubmitted }) {
   const schema = z.object({
     firstname: z.string().optional(),
     lastname: z.string().optional(),
@@ -53,9 +54,13 @@ export default function MarketerForm() {
     event.preventDefault()
     const isValid = validateForm()
     if (isValid) {
+      formService.addForm(formData)
       setIsSubmitted(true)
+      //! FOR DEBUGGING
+      // console.log('Form submitted:', formData)
     } else {
-      console.log('Form contains errors:', errors)
+      //! FOR DEBUGGING
+      // console.log('Form contains errors:', errors)
     }
   }
 
@@ -68,83 +73,97 @@ export default function MarketerForm() {
         setErrors({})
       }}>
       <label htmlFor="firstname">First Name</label>
-      <input
-        type="text"
-        name="firstname"
-        id="firstname"
-        value={formData.firstname}
-        onChange={handleInputChange}
-      />
-      {errors.firstname && <p className="error">{errors.firstname}</p>}
+      <div className="input-wrapper">
+        <input
+          type="text"
+          name="firstname"
+          id="firstname"
+          value={formData.firstname}
+          onChange={handleInputChange}
+        />
+        {errors.firstname && <div className="error">{errors.firstname}</div>}
+      </div>
 
       <label htmlFor="lastname">Last Name</label>
-      <input
-        type="text"
-        name="lastname"
-        id="lastname"
-        value={formData.lastname}
-        onChange={handleInputChange}
-      />
-      {errors.lastname && <p className="error">{errors.lastname}</p>}
+      <div className="input-wrapper">
+        <input
+          type="text"
+          name="lastname"
+          id="lastname"
+          value={formData.lastname}
+          onChange={handleInputChange}
+        />
+        {errors.lastname && <div className="error">{errors.lastname}</div>}
+      </div>
 
       <label htmlFor="email">Email Address</label>
-      <input
-        type="text"
-        name="email"
-        id="email"
-        value={formData.email}
-        onChange={handleInputChange}
-      />
-      {errors.email && <p className="error">{errors.email}</p>}
+      <div className="input-wrapper">
+        <input
+          type="text"
+          name="email"
+          id="email"
+          value={formData.email}
+          onChange={handleInputChange}
+        />
+        {errors.email && <div className="error">{errors.email}</div>}
+      </div>
 
       <label htmlFor="website">Website Address</label>
-      <input
-        type="text"
-        name="website"
-        id="website"
-        value={formData.website}
-        onChange={handleInputChange}
-      />
-      {errors.website && <p className="error">{errors.website}</p>}
+      <div className="input-wrapper">
+        <input
+          type="text"
+          name="website"
+          id="website"
+          value={formData.website}
+          onChange={handleInputChange}
+        />
+        {errors.website && <div className="error">{errors.website}</div>}
+      </div>
 
       <label htmlFor="linkedin">LinkedIn Profile Address</label>
-      <input
-        type="text"
-        name="linkedin"
-        id="linkedin"
-        value={formData.linkedin}
-        onChange={handleInputChange}
-      />
-      {errors.linkedin && <p className="error">{errors.linkedin}</p>}
+      <div className="input-wrapper">
+        <input
+          type="text"
+          name="linkedin"
+          id="linkedin"
+          value={formData.linkedin}
+          onChange={handleInputChange}
+        />
+        {errors.linkedin && <div className="error">{errors.linkedin}</div>}
+      </div>
 
       <label htmlFor="experience">
         How many years of experience do you have with Facebook Marketing?
       </label>
-      <section className="radio-section">
-        <label>
-          <input
-            type="radio"
-            name="experience"
-            value={0}
-            onChange={handleInputChange}
-          />
-          No experience
-        </label>
-        {/* Other radio button options */}
-      </section>
-      {errors.experience && <p className="error">{errors.experience}</p>}
+      <div className="input-wrapper">
+        <section className="radio-section">
+          <label>
+            <input
+              type="radio"
+              name="experience"
+              value={0}
+              onChange={handleInputChange}
+            />
+            No experience
+          </label>
+          {/* Other radio button options */}
+        </section>
+        {errors.experience && <div className="error">{errors.experience}</div>}
+      </div>
 
       <label htmlFor="budget">
         What was the biggest campaign budget you have managed in a single month?
       </label>
-      <input
-        type="number"
-        name="budget"
-        id="budget"
-        value={formData.budget}
-        onChange={handleInputChange}
-      />
-      {errors.budget && <p className="error">{errors.budget}</p>}
+      <div className="input-wrapper">
+        <input
+          type="number"
+          name="budget"
+          id="budget"
+          value={formData.budget}
+          onChange={handleInputChange}
+        />
+        {errors.budget && <div className="error">{errors.budget}</div>}
+      </div>
 
       <button type="submit">Submit</button>
       <button type="reset">Reset</button>
