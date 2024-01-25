@@ -1,5 +1,5 @@
-import { storageService } from '../helpers/async-storage.service'
-import { httpService } from '../helpers/http.service'
+import { storageService } from '../helpers/async-storage.service.js'
+import { httpService } from '../helpers/http.service.js'
 export const formService = {
   getForms,
   getFormById,
