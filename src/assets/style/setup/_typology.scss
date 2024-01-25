@@ -1,14 +1,20 @@
-// @font-face {
-//   font-family: eurofurence;
-//   src: url(../../font/eurofurence/eurof35.ttf);
-// }
+// Define font paths
+$font-path: '/src/assets/font/';
 
-// @font-face {
-//   font-family: 'lato bold';
-//   src: url(../../font/lato-bold/Lato-Bold.ttf);
-// }
+// Import Eurofurence font
+@font-face {
+  font-family: 'eurofurence';
+  src: url('#{$font-path}eurofurence/eurof35.ttf');
+}
 
-// @font-face {
-//   font-family: 'lato regular';
-//   src: url(../../font/lato-regular/Lato-Regular.ttf);
-// }
+// Import Lato Bold font
+@font-face {
+  font-family: 'lato bold';
+  src: url('#{$font-path}lato-bold/Lato-Bold.ttf');
+}
+
+// Import Lato Regular font
+@font-face {
+  font-family: 'lato regular';
+  src: url('#{$font-path}lato-regular/Lato-Regular.ttf');
+}
