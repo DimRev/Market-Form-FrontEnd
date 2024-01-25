@@ -21,20 +21,22 @@
     grid-template-rows: repeat(2, 20px);
     .error {
       margin-inline-start: 15px;
-      text-transform: uppercase;
-      font-weight: 700;
+      font-family: 'lato bold';
       font-size: 0.7em;
-      translate: 0 -10%;
+      translate: 0 -25%;
       color: var(--error);
     }
   }
-  button:first-of-type {
+  button {
     width: 200px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  button:first-of-type {
     place-self: end;
     margin-inline-end: 15px;
   }
   button:last-of-type {
-    width: 200px;
     place-self: start;
     margin-inline-start: 15px;
   }
