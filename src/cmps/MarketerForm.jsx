@@ -53,7 +53,7 @@ export default function MarketerForm() {
     event.preventDefault()
     const isValid = validateForm()
     if (isValid) {
-      console.log('Form submitted:', formData)
+      setIsSubmitted(true)
     } else {
       console.log('Form contains errors:', errors)
     }
