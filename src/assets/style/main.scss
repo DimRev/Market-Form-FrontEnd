@@ -1,12 +1,13 @@
-// Setup
+// setup
 @import './setup/variables';
 @import './setup/typology';
 @import './setup/helpers';
 @import './setup/mixins';
 
-// Base
+// base
 @import './base/layout';
 @import './base/base';
 
-// cmps
+// page
+@import './pages/formPage'; // cmps
 @import './cmps/marketerForm';
