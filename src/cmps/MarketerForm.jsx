@@ -146,7 +146,33 @@ export default function MarketerForm({ setIsSubmitted }) {
             />
             No experience
           </label>
-          {/* Other radio button options */}
+          <label>
+            <input
+              type="radio"
+              name="experience"
+              value={0}
+              onChange={handleInputChange}
+            />
+            0-1 years
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="experience"
+              value={0}
+              onChange={handleInputChange}
+            />
+            1-2 years
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="experience"
+              value={0}
+              onChange={handleInputChange}
+            />
+            2 and more years
+          </label>
         </section>
         {errors.experience && <div className="error">{errors.experience}</div>}
       </div>
